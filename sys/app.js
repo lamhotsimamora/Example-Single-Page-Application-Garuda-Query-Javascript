@@ -9,8 +9,8 @@ $(document).ready(function(){
 			galery:  'galery.html'
 		};
 		var component = {
-			loading: '<center><div class="preloader-wrapper active"><div class="spinner-layer spinner-red-only"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"> <div class="circle"></div> </div><div class="circle-clipper right"> <div class="circle"></div> </div> </div> </div></center>',
-			head:'head.html',
+			loading: '<center><div class="preloader-wrapper active"><div class="spinner-layer spinner-red-only"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"><div class="circle"></div> </div><div class="circle-clipper right"> <div class="circle"></div> </div> </div> </div></center>',
+			head: 	 'head.html',
 			footer:  'footer.html'
 		};
 		function loadFooter()
@@ -33,7 +33,7 @@ $(document).ready(function(){
 			});
 		}
 
-		function loadPage(type,element)
+		function loadPage(type)
 		{
 				let u;
 				let name;
@@ -65,7 +65,7 @@ $(document).ready(function(){
 				{
 				   _printTo("template_body",component.loading);
 				 
-				   _loadDoc("./component/"+u,function(r){
+				   _loadDoc("./page/"+u,function(r){
 					   	_printTo("template_body","");
 						if (r != false)
 						{
@@ -81,53 +81,56 @@ $(document).ready(function(){
 					_refresh(_myUrl());
 				}
 		}
+
+
 		function showToast()
 		{
-			var $toast = $('<span>Clone / Download </span></br>').add($(' <a target="_blank" href="https://github.com/lamhotsimamora/Example-Single-Page-Application-Garuda-Query-Javascript">&nbsp Go</a>'));
+			var $toast = $('<span>Clone / Download </span></br>').add($('<a target="_blank" href="https://github.com/lamhotsimamora/Example-Single-Page-Application-Garuda-Query-Javascript">&nbsp Go</a>'));
 			Materialize.toast($toast, 10000);
 		}
 
 		
 		loadHeader();
-		loadPage("H","template_body");
+		
 		loadFooter();
+
+		loadPage("H");
 
 		setTimeout(function(){
 			
-			
 			_onClick("btn_profile",function(){
-				loadPage("P","template_body");
+				loadPage("P");
 			});
 			_onClick("btn_about",function(){
-				loadPage("A","template_body");
+				loadPage("A");
 			});
 			_onClick("btn_contact",function(){
-				loadPage("C","template_body");
+				loadPage("C");
 			});
 			_onClick("btn_next",function(){
-				loadPage("P","template_body");
+				loadPage("P");
 			});
 			_onClick("btn_galery",function(){
-				loadPage("G","template_body");
+				loadPage("G");
 			});
 			_onClick("btn_home",function(){
-				loadPage("H","template_body");
+				loadPage("H");
 			});
 			_onClick("btn_profile_",function(){
-				loadPage("P","template_body");
+				loadPage("P");
 			});
 			_onClick("btn_about_",function(){
-				loadPage("A","template_body");
+				loadPage("A");
 			});
 			_onClick("btn_contact_",function(){
-				loadPage("C","template_body");
+				loadPage("C");
 			});
 		
 			_onClick("btn_galery_",function(){
-				loadPage("G","template_body");
+				loadPage("G");
 			});
 			_onClick("btn_home_",function(){
-				loadPage("H","template_body");
+				loadPage("H");
 			});
 
 
@@ -141,19 +144,19 @@ $(document).ready(function(){
 				    
 					if (value.toLowerCase() ==='profile')
 					{
-						loadPage("P","template_body");
+						loadPage("P");
 					}
 					else if (value.toLowerCase() ==='contact')
 					{
-						loadPage("C","template_body");
+						loadPage("C");
 					}
 					else if (value.toLowerCase() ==='galery')
 					{
-						loadPage("G","template_body");
+						loadPage("G");
 					}
 					else if (value.toLowerCase() ==='about')
 					{
-						loadPage("A","template_body");
+						loadPage("A");
 					}
 			
 			});
@@ -161,19 +164,18 @@ $(document).ready(function(){
 		
 		
 		showToast();
+
 		_keyCustom(function(){
 			showToast();
 		},_keyCode.space);
+		
 		_keyCustom(function(){
-			loadPage("C","template_body");
+			loadPage("C");
 		},_keyCode.insert);
 
 		_keyCustom(function(){
-			loadPage("H","template_body");
+			loadPage("H");
 		},_keyCode.home);
 
-
 		$(".button-collapse").sideNav();	
-		
-
 });
