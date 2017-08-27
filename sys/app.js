@@ -1,15 +1,13 @@
 $(document).ready(function(){
 	
-		var render_body		=	null;
-		var render_footer	=	null;
 
-        const page = {
-        	home: 	 'home.html',
-        	profile: 'profile.html',
-        	about: 	 'about.html',
-        	contact: 'contact.html',
-        	galery:  'galery.html'
-        };
+		const page = {
+			home: 	 'home.html',
+			profile: 'profile.html',
+			about: 	 'about.html',
+			contact: 'contact.html',
+			galery:  'galery.html'
+		};
 		var component = {
 			loading: '<center><div class="preloader-wrapper active"><div class="spinner-layer spinner-red-only"><div class="circle-clipper left"><div class="circle"></div></div><div class="gap-patch"> <div class="circle"></div> </div><div class="circle-clipper right"> <div class="circle"></div> </div> </div> </div></center>',
 			head:'head.html',
