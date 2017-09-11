@@ -1,4 +1,6 @@
 $(document).ready(function(){
+		// Enabled console log Garuda Javascript
+		run_console = true;
 	
 
 		const page = {
